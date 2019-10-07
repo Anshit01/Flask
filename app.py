@@ -16,6 +16,9 @@ def about():
         return render_template('about.html', var = request.args.get('q'))
     return render_template('about.html')
 
+@app.route('/blog/<num>')
+def blog(num):
+    return render_template('template.html', text = 'You are at Blog number ' + num)
 
 if __name__ == '__main__':
     app.run(debug = True)
